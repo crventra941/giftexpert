@@ -7,13 +7,13 @@ describe('Pruebas en componente <GifGridItem /> ', () => {
     title: "prueba.png",
     url: "Prueba.png"
   }
- 
+
   const wrapper = shallow(<GifGridItem img={imgTest} />);
 
-  test('debe mostrar el componente correctamente', () => { 
+  test('debe mostrar el componente correctamente', () => {
     expect(wrapper).toMatchSnapshot();
   });
-  
+
   test('debe de tener un parrafo con el title', () => {
     const p = wrapper.find('p');
 
@@ -23,9 +23,9 @@ describe('Pruebas en componente <GifGridItem /> ', () => {
   test('debe de tener la imagen igual al url y alt de los props', () => {
     const img = wrapper.find('img');
     // console.log(img.props())
-    expect( img.prop('src') ).toBe(imgTest.url);
-    expect( img.prop('alt') ).toBe(imgTest.title);
-    
+    expect(img.prop('src')).toBe(imgTest.url);
+    expect(img.prop('alt')).toBe(imgTest.title);
+
   });
 
   test('debe tener la clase animate__fadeIn', () => {
